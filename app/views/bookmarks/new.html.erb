@@ -1,0 +1,7 @@
+<h1>Use form below to add an available recipe to your <%= @category.name %> collecton of recipes</h1>
+
+<%= simple_form_for [ @category, @bookmark] do |f| %>
+  <%= f.association :recipe, as: :select, label: "What recipe would you like to add to your #{@category.name} collection?", :input_html => { :style=> 'width: 460px' } %>
+  <%= f.input :comment, :input_html => { :style=> 'width: 230px' } %>
+  <%= f.submit "Add a new recipe 🍗🍛🥘" %>
+<% end %>

@@ -1,3 +1,9 @@
 <h1>Welcome to the wonderful world of everything <%= @category.name %> cuisine</h1>
 
+<ul>
+  <% @category.bookmarks.each do |bookmark| %>
+    <li><%= bookmark.recipe.name %> | <%= link_to "Delete this recipe", category_bookmark_path(@category, bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
+
 <%= link_to "Delete this Category from your collection", category_path(@category), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
