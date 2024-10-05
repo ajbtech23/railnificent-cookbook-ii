@@ -1,0 +1,6 @@
+<h1>Build a new Category in your collection of Categories</h1>
+
+<%= simple_form_for (@category) do |f| %>
+  <%= f.input :name, :input_html => { :style=> 'width: 230px' } %>
+  <%= f.submit "Create Category 🌍🍗🍛🍝🥘🌍" %>
+<% end %>
